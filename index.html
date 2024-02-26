@@ -1,7 +1,10 @@
 <html>
 <head>
     <title>testpage</title>
-    <body>
+    <body style="font-size: 200px">
+        <div>
+            <button onclick="refresh()">刷新</button>
+        </div>
         <span id="first"></span>
         <span id="method">-</span>
         <span id="second"></span>
@@ -21,6 +24,10 @@
         var methodCode =  Math.floor(Math.random() * 10) % 2;
         var method = document.getElementById("method");
         method.innerHTML = methods[methodCode]
+
+        function refresh(){
+            location.reload(true)
+        }
 
     </script>
 </head>
