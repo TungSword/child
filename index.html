@@ -2,8 +2,8 @@
 <head>
     <title>testpage</title>
     <body style="font-size: 200px">
-        <div>
-            <button onclick="refresh()">刷新</button>
+        <div style="width: 100%; height: 200px" onclick="refresh()">
+            <h1>刷新</h1>
         </div>
         <span id="first"></span>
         <span id="method">-</span>
@@ -12,11 +12,11 @@
         <span id="result"></span>
     </body>
     <script>
-        var firstCode = Math.floor(Math.random() * 10);
+        var secondCode = Math.floor(Math.random() * 10);
+        var firstCode = Math.floor(Math.random() * 10) + secondCode;
         var first = document.getElementById("first");
         first.innerHTML = firstCode
 
-        var secondCode = Math.floor(Math.random() * 10) + firstCode;
         var second = document.getElementById("second");
         second.innerHTML = secondCode
 
@@ -24,9 +24,20 @@
         var methodCode =  Math.floor(Math.random() * 10) % 2;
         var method = document.getElementById("method");
         method.innerHTML = methods[methodCode]
+        var result = false;
+
+        var result = document.getElementById("result");
 
         function refresh(){
-            location.reload(true)
+            if(methodCode === 0){
+                result.innerHTML = String(secondCode + firstCode)
+            }else if(methodCode === 1){
+                result.innerHTML = String(firstCode - secondCode)
+            }
+            if(result){
+                location.reload(true)
+            }
+            result = true;
         }
 
     </script>
