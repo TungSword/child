@@ -3,14 +3,25 @@
     <title>testpage</title>
     <body>
         <span id="first"></span>
-        <span id="method"></span>
+        <span id="method">-</span>
         <span id="second"></span>
         <span>=</span>
         <span id="result"></span>
     </body>
     <script>
+        var firstCode = Math.floor(Math.random() * 10);
         var first = document.getElementById("first");
-        first.innerHTML = "test"
+        first.innerHTML = firstCode
+
+        var secondCode = Math.floor(Math.random() * 10);
+        var second = document.getElementById("second");
+        second.innerHTML = secondCode
+
+        var methods = ["+", "-"]
+        var methodCode =  Math.floor(Math.random() * 10) % 2;
+        var method = document.getElementById("method");
+        method.innerHTML = methods[methodCode]
+
     </script>
 </head>
 </html>
