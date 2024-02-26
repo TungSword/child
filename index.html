@@ -1,54 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>小於同学学习用</title>
-    <body onclick="refresh()">
-      <div style="font-size: 200px">
-        <span id="first"></span>
-        <span id="method">-</span>
-        <span id="second"></span>
-        <br />
-        <span>=</span>
-        <span id="result"></span>
-      </div>
-    </body>
-    <script>
-      var secondCode = Math.floor(Math.random() * 10);
-      var firstCode = Math.floor(Math.random() * 10) + secondCode;
-      var methods = ['+', '-'];
-      var methodCode = Math.floor(Math.random() * 10) % 2;
-      var flag = false;
-
-      init();
-
-      function init() {
-        secondCode = Math.floor(Math.random() * 10);
-        firstCode = Math.floor(Math.random() * 10) + secondCode;
-        methodCode = Math.floor(Math.random() * 10) % 2;
-        var first = document.getElementById('first');
-        first.innerHTML = firstCode;
-
-        var second = document.getElementById('second');
-        second.innerHTML = secondCode;
-
-        var method = document.getElementById('method');
-        method.innerHTML = methods[methodCode];
-      }
-
-      function refresh() {
-        var result = document.getElementById('result');
-        if (methodCode === 0) {
-          result.innerHTML = String(secondCode + firstCode);
-        } else if (methodCode === 1) {
-          result.innerHTML = String(firstCode - secondCode);
-        }
-        if (flag) {
-          result.innerHTML = '';
-          flag = false;
-          init();
-        }else {
-            flag = true;
-        }
-      }
-    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-ZJr50RLC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BOh93jHK.css">
   </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
