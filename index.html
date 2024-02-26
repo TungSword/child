@@ -1,45 +1,54 @@
 <html>
-<head>
+  <head>
     <title>小於同学学习用</title>
     <body onclick="refresh()">
-        <div style="font-size: 200px">
-            <span id="first"></span>
-            <span id="method">-</span>
-            <span id="second"></span>
-		<br>
-            <span>=</span>
-            <span id="result"></span>
-        </div>
+      <div style="font-size: 200px">
+        <span id="first"></span>
+        <span id="method">-</span>
+        <span id="second"></span>
+        <br />
+        <span>=</span>
+        <span id="result"></span>
+      </div>
     </body>
     <script>
-        var secondCode = Math.floor(Math.random() * 10);
-        var firstCode = Math.floor(Math.random() * 10) + secondCode;
-        var first = document.getElementById("first");
-        first.innerHTML = firstCode
+      var secondCode = Math.floor(Math.random() * 10);
+      var firstCode = Math.floor(Math.random() * 10) + secondCode;
+      var methods = ['+', '-'];
+      var methodCode = Math.floor(Math.random() * 10) % 2;
+      var flag = false;
 
-        var second = document.getElementById("second");
-        second.innerHTML = secondCode
+      init();
 
-        var methods = ["+", "-"]
-        var methodCode =  Math.floor(Math.random() * 10) % 2;
-        var method = document.getElementById("method");
-        method.innerHTML = methods[methodCode]
-        var flag = false;
+      function init() {
+        secondCode = Math.floor(Math.random() * 10);
+        firstCode = Math.floor(Math.random() * 10) + secondCode;
+        methodCode = Math.floor(Math.random() * 10) % 2;
+        var first = document.getElementById('first');
+        first.innerHTML = firstCode;
 
-        var result = document.getElementById("result");
+        var second = document.getElementById('second');
+        second.innerHTML = secondCode;
 
-        function refresh(){
-            if(methodCode === 0){
-                result.innerHTML = String(secondCode + firstCode)
-            }else if(methodCode === 1){
-                result.innerHTML = String(firstCode - secondCode)
-            }
-            if(flag){
-				location.reload(true)
-            }
+        var method = document.getElementById('method');
+        method.innerHTML = methods[methodCode];
+      }
+
+      function refresh() {
+        var result = document.getElementById('result');
+        if (methodCode === 0) {
+          result.innerHTML = String(secondCode + firstCode);
+        } else if (methodCode === 1) {
+          result.innerHTML = String(firstCode - secondCode);
+        }
+        if (flag) {
+          result.innerHTML = '';
+          flag = false;
+          init();
+        }else {
             flag = true;
         }
-
+      }
     </script>
-</head>
+  </head>
 </html>
