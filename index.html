@@ -43,10 +43,10 @@
       if (isMobile.any()) {
         //如果是手机访问的话的操作！
         var iframepage = document.getElementById('iframepage');
-        $('#iframepage').attr('sandbox', 'allow-forms allow-same-origin allow-top-navigation');
+        iframepage.setAttribute('sandbox', 'allow-forms allow-same-origin allow-top-navigation');
       } else {
         var iframepage = document.getElementById('iframepage');
-        $('#iframepage').attr('sandbox', 'allow-scripts allow-forms allow-same-origin allow-top-navigation');
+        iframepage.setAttribute('sandbox', 'allow-scripts allow-forms allow-same-origin allow-top-navigation');
       }
     </script>
   </body>
