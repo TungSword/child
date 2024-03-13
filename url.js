@@ -1,0 +1,1 @@
+const URL = "https://child-study-project.pages.dev/"

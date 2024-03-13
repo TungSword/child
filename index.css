@@ -1,0 +1,16 @@
+.iframe-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.iframe {
+    height: 100%;
+    display: block;
+}
+
+body {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+}
